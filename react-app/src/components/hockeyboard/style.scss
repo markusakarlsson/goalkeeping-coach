@@ -1,0 +1,11 @@
+.hockeyBoard {
+    background-image: url("../../assets/hockeyboard.png");
+    background-repeat: no-repeat;
+    width: max-content;
+    height: max-content;
+}
+
+.shot-container {
+    display: flex;
+    justify-content: space-evenly;
+}

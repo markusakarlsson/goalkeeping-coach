@@ -41,7 +41,7 @@ button {
     color: whitesmoke;
     border-radius: 6px;
     outline-style: none;
-    // text-decoration: none;
+    padding-top: 6px;
 }
 button :active {
     text-decoration: none;
@@ -49,7 +49,7 @@ button :active {
 
 .undo-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     & button {
         display: flex;
         flex-direction: column;

@@ -153,7 +153,7 @@ const HockeyBoardSketch = () => {
         onDragOver={(e) => e.preventDefault()}
       >
         <div className="hockeyBoard">
-          <Stage width={571} height={726} ref={stageRef}>
+          <Stage width={571} height={568} ref={stageRef}>
             <Layer>
               {images.map((image) => {
                 console.log("shots array:", images);

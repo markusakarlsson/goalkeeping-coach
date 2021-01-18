@@ -18,8 +18,8 @@ const URLImage = ({ image }) => {
       id={image.id}
       x={image.x}
       y={image.y}
-      offsetX={img ? img.width / 3 : 0}
-      offsetY={img ? img.height / 3 : 0}
+      offsetX={img ? img.width / 2 : 0}
+      offsetY={img ? img.height / 2 : 0}
     />
   );
 };

@@ -2,11 +2,11 @@ import React, { createRef, useRef } from "react";
 import { render } from "react-dom";
 import { Stage, Layer, Image } from "react-konva";
 import useImage from "use-image";
-import goal1 from "../../assets/Goal-1.png";
-import goal2 from "../../assets/Goal-2.png";
-import save3 from "../../assets/Save-3.png";
-import save4 from "../../assets/Save-4.png";
-import save5 from "../../assets/Save-5.png";
+import goal1 from "../../assets/goal-1.png";
+import goal2 from "../../assets/goal-2.png";
+import save3 from "../../assets/save-3.png";
+import save4 from "../../assets/save-4.png";
+import save5 from "../../assets/save-5.png";
 import UndoIcon from '@material-ui/icons/Undo';
 import "./style.scss";
 
@@ -53,38 +53,6 @@ const HockeyBoardSketch = () => {
 
   return (
     <>
-      <div
-        onDrop={(e) => {
-          e.preventDefault();
-          console.log(dragUrl.current.id);
-          stageRef.current.setPointersPositions(e);
-          setImages(
-            images.concat([
-              {
-                ...stageRef.current.getPointerPosition(),
-                id: imageId.current,
-                src: dragUrl.current,
-              },
-            ])
-            );
-          console.log("innan undo", images);
-        }}
-        onDragOver={(e) => e.preventDefault()}
-      >
-        <div className="hockeyBoard">
-          <Stage width={571} height={726} ref={stageRef}>
-            <Layer>
-              {images.map((image) => {
-                console.log("shots array:", images);
-                console.log("saves + goals:", images.length);
-                console.log("goals:", nrOfGoals);
-                console.log(Number.parseInt(images.id));
-                return <URLImage image={image} />;
-              })}
-            </Layer>
-          </Stage>
-      </div>
-        </div>
               <div className="tool-container">
                 <div className="shot-container">
                   <p>Goal - 1</p>
@@ -166,6 +134,38 @@ const HockeyBoardSketch = () => {
                       </button>
                 </div>
               </div>
+      <div
+        onDrop={(e) => {
+          e.preventDefault();
+          console.log(dragUrl.current.id);
+          stageRef.current.setPointersPositions(e);
+          setImages(
+            images.concat([
+              {
+                ...stageRef.current.getPointerPosition(),
+                id: imageId.current,
+                src: dragUrl.current,
+              },
+            ])
+            );
+          console.log("innan undo", images);
+        }}
+        onDragOver={(e) => e.preventDefault()}
+      >
+        <div className="hockeyBoard">
+          <Stage width={571} height={726} ref={stageRef}>
+            <Layer>
+              {images.map((image) => {
+                console.log("shots array:", images);
+                console.log("saves + goals:", images.length);
+                console.log("goals:", nrOfGoals);
+                console.log(Number.parseInt(images.id));
+                return <URLImage image={image} />;
+              })}
+            </Layer>
+          </Stage>
+      </div>
+        </div>
       <div className="shot-presentation">
         <p>
           Saves/Shots = {nrOfSaves}/{nrOfShots}
@@ -174,7 +174,7 @@ const HockeyBoardSketch = () => {
       <div className="grade-presentation">
         <p>
           Grade =
-          {nrOfSaves + nrOfShots != 0 &&
+          {nrOfSaves + nrOfShots !== 0 &&
             " " + (totalGrade / nrOfShots).toFixed(2) + " / "}
           {finalGrade < 3.8 && <p style={{ color: "#EB1313" }}>NOT GOOD</p>}
           {finalGrade >= 3.8 && finalGrade < 4.1 && (

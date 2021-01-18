@@ -1,11 +1,82 @@
+p {
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+    // font-family: 'Playfair Display', serif;
+    // font-family: 'Sura', serif;
+}
+
 .hockeyBoard {
     background-image: url("../../assets/hockeyboard.png");
     background-repeat: no-repeat;
+    margin-top: 3rem;
     width: max-content;
     height: max-content;
 }
 
-.shot-container {
+.tool-container {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 1rem;
+    // background-color: rgb(32, 32, 32);
+
+    & .shot-container {
+        display: flex;
+        align-items: center;
+        /* height: 100%; */
+        /* width: 100%; */
+        /* justify-content: center; */
+        flex-direction: column;
+        & #save-3, #save-4 {
+                margin-top: 4px;
+        }
+    }
+    & img {
+        cursor: pointer;
+    }
+}
+
+button {
+    cursor: pointer;
+    background-color: #333333;
+    color: whitesmoke;
+    border-radius: 6px;
+    outline-style: none;
+    // text-decoration: none;
+}
+button :active {
+    text-decoration: none;
+}
+
+.undo-container {
+    display: flex;
+    align-items: flex-start;
+    & button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Cabin', sans-serif;
+        & #text {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            // font-family: 'Cabin', sans-serif;
+
+        }
+    }
+}
+
+.shot-presentation {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin: 1rem 0 1rem 0;
+}
+.grade-presentation {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 24px;
+    & p {
+        display: inline;
+    }
 }

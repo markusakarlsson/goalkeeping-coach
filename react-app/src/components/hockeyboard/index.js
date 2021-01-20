@@ -34,7 +34,7 @@ const HockeyBoardSketch = () => {
   const stageRef = React.useRef();
   const imageId = React.useRef();
   const [images, setImages] = React.useState([]);
-  // const [updatedCanvas] = React.useState([]);
+  const [updatedCanvas, setUpdatedCanvas] = React.useState([]);
   const nrOfGoal1 = images.filter((images) => images.id === "goal-1");
   const nrOfGoal2 = images.filter((images) => images.id === "goal-2");
   const nrOfSave3 = images.filter((images) => images.id === "save-3");
@@ -169,8 +169,13 @@ const HockeyBoardSketch = () => {
                   <button
                     onClick={(e) => {
                       e.preventDefault();
+                      // images.pop();
                       images.pop();
-                      console.log("efter undo", images);
+                      // images.slice();
+                      const updatedCanvas = images.slice();
+                      setUpdatedCanvas(updatedCanvas);
+                      console.log("images efter undo", images);
+                      console.log("canvas efter undo", updatedCanvas);
                     }}
                   >
                     Undo

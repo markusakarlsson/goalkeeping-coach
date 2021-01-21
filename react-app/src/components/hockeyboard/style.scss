@@ -1,128 +1,108 @@
 p {
-    font-family: 'Cabin', sans-serif;
-    margin: 0;
-    // font-family: 'Playfair Display', serif;
-    // font-family: 'Sura', serif;
+  font-family: "Cabin", sans-serif;
+  margin: 0;
 }
 
 .hockeyBoard {
-    background-image: url("../../assets/hockeyboard.png");
-    background-repeat: no-repeat;
-    margin-top: 1rem;
-    width: max-content;
-    height: max-content;
+  background-image: url("../../assets/hockeyboard.png");
+  background-repeat: no-repeat;
+  margin-top: 1rem;
+  width: max-content;
+  height: max-content;
 }
 
 .game-info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    & .period {
-        font-size: 36px;
-        font-weight: bold;
-        padding-bottom: 10px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & .period {
+    font-size: 36px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
 }
 
 .tool-container {
-    background-color: rgba(49, 49, 49, 0.952);
-    border-radius: 10px 10px 0 0;
-    height: 115px;
-    text-align: center;
-    // justify-content: center;
-    // display: flex;
+  background-color: rgba(49, 49, 49, 0.952);
+  border-radius: 10px 10px 0 0;
+  height: 115px;
+  text-align: center;
 }
 
 .tool-instructions {
-    font-size: x-small;
-    text-transform: uppercase;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    padding: 5px 0 15px 0;
+  font-size: x-small;
+  text-transform: uppercase;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 5px 0 15px 0;
 }
 
 .draw-container {
+  display: flex;
+  justify-content: space-around;
+
+  align-items: flex-end;
+
+  & .shot-container {
     display: flex;
-    justify-content: space-around;
-
-    align-items: flex-end;
-
-    // opacity: 0.5;
-    // margin-top: 1rem;
-    // background-color: rgb(32, 32, 32);
-
-    & .shot-container {
-        display: flex;
-        align-items: center;
-        font-size: small;
-        text-transform: uppercase;
-        /* height: 100%; */
-        /* width: 100%; */
-        /* justify-content: center; */
-        flex-direction: column-reverse;
-        & #save-5, #goal-1, #goal-2 {
-                padding-bottom: 2px;
-        }
+    align-items: center;
+    font-size: small;
+    text-transform: uppercase;
+    flex-direction: column-reverse;
+    & #save-5,
+    #goal-1,
+    #goal-2 {
+      padding-bottom: 2px;
     }
-    & img {
-        cursor: pointer;
-        // scale: 1,5;
-        height: 37px;
-    }
+  }
+  & img {
+    cursor: pointer;
+    height: 37px;
+  }
 }
 
 button {
-    cursor: pointer;
-    background-color: #333333;
-    color: whitesmoke;
-    border-radius: 6px;
-    // outline-style: none;
-    font-size: small;
-        text-transform: uppercase;
-    // padding-top: 6px;
+  cursor: pointer;
+  background-color: #333333;
+  color: whitesmoke;
+  border-radius: 6px;
+  font-size: small;
+  text-transform: uppercase;
 }
-// button :hover {
-//     background-color: hotpink;
-// }
 
 .undo-container {
+  display: flex;
+  & button {
+    background-color: #616161;
     display: flex;
-    // align-items: center;
-    & button {
-        background-color: #616161;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        font-family: 'Cabin', sans-serif;
-        & #text {
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            // font-family: 'Cabin', sans-serif;
-
-        }
+    flex-direction: column-reverse;
+    align-items: center;
+    font-family: "Cabin", sans-serif;
+    & #text {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
     }
+  }
 
-    & button:hover {
-            background-color: #333333;
-    }
+  & button:hover {
+    background-color: #333333;
+  }
 }
-
-
 
 .shot-presentation {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  margin: 1rem 0 1rem 0;
 }
 .grade-presentation {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 24px;
-    & p {
-        display: inline;
-    }
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 24px;
+  & p {
+    display: inline;
+  }
 }

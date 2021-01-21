@@ -25,10 +25,6 @@ const URLImage = ({ image }) => {
   );
 };
 
-// function financial(finalGrade) {
-//   return Number.(finalGrade)toFixed(2);
-// }
-
 const HockeyBoardSketch = () => {
   const dragUrl = React.useRef();
   const stageRef = React.useRef();
@@ -83,26 +79,26 @@ const HockeyBoardSketch = () => {
         onDragOver={(e) => e.preventDefault()}
       >
         <div className="hockeyBoard">
-          <Stage
-            width={571}
-            height={610}
-            ref={stageRef}
-          >
+          <Stage width={571} height={610} ref={stageRef}>
             <Layer
-              // className="shot"
               onDblClick={(e) => {
                 console.log("halllåååå", e.target);
-                // const numberSlice = Number.parseInt(e.target._id)
                 images.splice(e.target.index, 1);
                 const updatedCanvas = images.slice();
                 setUpdatedCanvas(updatedCanvas);
               }}
               onDblTap={(e) => {
-                console.log("halllåååå", e.target);
-                // const numberSlice = Number.parseInt(e.target._id)
                 images.splice(e.target.index, 1);
                 const updatedCanvas = images.slice();
                 setUpdatedCanvas(updatedCanvas);
+              }}
+              onMouseEnter={(e) => {
+                const container = e.target.getStage().container();
+                container.style.cursor = "pointer";
+              }}
+              onMouseLeave={(e) => {
+                const container = e.target.getStage().container();
+                container.style.cursor = "default";
               }}
             >
               {images.map((image) => {
@@ -117,7 +113,8 @@ const HockeyBoardSketch = () => {
           </Stage>
           <div className="tool-container">
             <p className="tool-instructions">
-              <TouchAppIcon /> Drag and drop shots onto the board
+              <TouchAppIcon /> Drag and drop shots onto the board • Double-click
+              on shot to remove
             </p>
             <div className="draw-container">
               <div className="shot-container">
@@ -128,10 +125,6 @@ const HockeyBoardSketch = () => {
                   src={goal1}
                   draggable="true"
                   onDragStart={(e) => {
-                    dragUrl.current = e.target.src;
-                    imageId.current = e.target.id;
-                  }}
-                  onTouchStart={(e) => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
@@ -148,10 +141,6 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
-                  onTouchStart={(e) => {
-                    dragUrl.current = e.target.src;
-                    imageId.current = e.target.id;
-                  }}
                 />
               </div>
               <div className="shot-container">
@@ -162,10 +151,6 @@ const HockeyBoardSketch = () => {
                   src={save3}
                   draggable="true"
                   onDragStart={(e) => {
-                    dragUrl.current = e.target.src;
-                    imageId.current = e.target.id;
-                  }}
-                  onTouchStart={(e) => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
@@ -182,10 +167,6 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
-                  onTouchStart={(e) => {
-                    dragUrl.current = e.target.src;
-                    imageId.current = e.target.id;
-                  }}
                 />
               </div>
               <div className="shot-container">
@@ -199,32 +180,17 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
-                  onTouchStart={(e) => {
-                    dragUrl.current = e.target.src;
-                    imageId.current = e.target.id;
-                  }}
                 />
               </div>
               <div className="undo-container">
-                {/* <p>Undo</p> */}
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    // images.pop();
                     images.pop();
-                    // images.slice();
                     const updatedCanvas = images.slice();
                     setUpdatedCanvas(updatedCanvas);
                     console.log("images efter undo", images);
                     console.log("canvas efter undo", updatedCanvas);
-                  }}
-                  onTap={(e) => {
-                    e.preventDefault();
-                    // images.pop();
-                    images.pop();
-                    // images.slice();
-                    const updatedCanvas = images.slice();
-                    setUpdatedCanvas(updatedCanvas);
                   }}
                 >
                   Undo

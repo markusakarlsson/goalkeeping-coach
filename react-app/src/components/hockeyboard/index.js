@@ -90,7 +90,14 @@ const HockeyBoardSketch = () => {
           >
             <Layer
               // className="shot"
-              onClick={(e) => {
+              onDblClick={(e) => {
+                console.log("halllåååå", e.target);
+                // const numberSlice = Number.parseInt(e.target._id)
+                images.splice(e.target.index, 1);
+                const updatedCanvas = images.slice();
+                setUpdatedCanvas(updatedCanvas);
+              }}
+              onDblTap={(e) => {
                 console.log("halllåååå", e.target);
                 // const numberSlice = Number.parseInt(e.target._id)
                 images.splice(e.target.index, 1);
@@ -124,6 +131,10 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
+                  onTouchStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
                 />
               </div>
               <div className="shot-container">
@@ -134,6 +145,10 @@ const HockeyBoardSketch = () => {
                   src={goal2}
                   draggable="true"
                   onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                  onTouchStart={(e) => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
@@ -150,6 +165,10 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
+                  onTouchStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
                 />
               </div>
               <div className="shot-container">
@@ -163,6 +182,10 @@ const HockeyBoardSketch = () => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
+                  onTouchStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
                 />
               </div>
               <div className="shot-container">
@@ -173,6 +196,10 @@ const HockeyBoardSketch = () => {
                   src={save5}
                   draggable="true"
                   onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                  onTouchStart={(e) => {
                     dragUrl.current = e.target.src;
                     imageId.current = e.target.id;
                   }}
@@ -190,6 +217,14 @@ const HockeyBoardSketch = () => {
                     setUpdatedCanvas(updatedCanvas);
                     console.log("images efter undo", images);
                     console.log("canvas efter undo", updatedCanvas);
+                  }}
+                  onTap={(e) => {
+                    e.preventDefault();
+                    // images.pop();
+                    images.pop();
+                    // images.slice();
+                    const updatedCanvas = images.slice();
+                    setUpdatedCanvas(updatedCanvas);
                   }}
                 >
                   Undo

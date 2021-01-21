@@ -7,7 +7,7 @@ import goal2 from "../../assets/Goal-2.png";
 import save3 from "../../assets/Save-3.png";
 import save4 from "../../assets/Save-4.png";
 import save5 from "../../assets/Save-5.png";
-import TouchAppIcon from '@material-ui/icons/TouchApp';
+import TouchAppIcon from "@material-ui/icons/TouchApp";
 import UndoIcon from "@material-ui/icons/Undo";
 import "./style.scss";
 
@@ -83,107 +83,121 @@ const HockeyBoardSketch = () => {
         onDragOver={(e) => e.preventDefault()}
       >
         <div className="hockeyBoard">
-          <Stage width={571} height={610} ref={stageRef}>
-            <Layer>
+          <Stage
+            width={571}
+            height={610}
+            ref={stageRef}
+          >
+            <Layer
+              // className="shot"
+              onClick={(e) => {
+                console.log("halllåååå", e.target);
+                // const numberSlice = Number.parseInt(e.target._id)
+                images.splice(e.target.index, 1);
+                const updatedCanvas = images.slice();
+                setUpdatedCanvas(updatedCanvas);
+              }}
+            >
               {images.map((image) => {
                 console.log("shots array:", images);
                 console.log("saves + goals:", images.length);
                 console.log("goals:", nrOfGoals);
                 console.log(Number.parseInt(images.id));
+
                 return <URLImage image={image} />;
               })}
             </Layer>
           </Stage>
-              <div className="tool-container">
-                
-                <p className="tool-instructions"><TouchAppIcon/> Drag and drop shots onto the board</p>
-                <div className="draw-container">
-
-                <div className="shot-container">
-                  <p>Goal 1</p>
-                  <img
-                    alt="Goal-1"
-                    id="goal-1"
-                    src={goal1}
-                    draggable="true"
-                    onDragStart={(e) => {
-                      dragUrl.current = e.target.src;
-                      imageId.current = e.target.id;
-                    }}
-                  />
-                </div>
-                <div className="shot-container">
-                  <p>Goal 2</p>
-                  <img
-                    id="goal-2"
-                    alt="Goal-2"
-                    src={goal2}
-                    draggable="true"
-                    onDragStart={(e) => {
-                      dragUrl.current = e.target.src;
-                      imageId.current = e.target.id;
-                    }}
-                  />
-                </div>
-                <div className="shot-container">
-                  <p>Save 3</p>
-                  <img
-                    id="save-3"
-                    alt="Save-3"
-                    src={save3}
-                    draggable="true"
-                    onDragStart={(e) => {
-                      dragUrl.current = e.target.src;
-                      imageId.current = e.target.id;
-                    }}
-                  />
-                </div>
-                <div className="shot-container">
-                  <p>Save 4</p>
-                  <img
-                    id="save-4"
-                    alt="Save-4"
-                    src={save4}
-                    draggable="true"
-                    onDragStart={(e) => {
-                      dragUrl.current = e.target.src;
-                      imageId.current = e.target.id;
-                    }}
-                  />
-                </div>
-                <div className="shot-container">
-                  <p>Save 5</p>
-                  <img
-                    id="save-5"
-                    alt="Save-5"
-                    src={save5}
-                    draggable="true"
-                    onDragStart={(e) => {
-                      dragUrl.current = e.target.src;
-                      imageId.current = e.target.id;
-                    }}
-                  />
-                </div>
-                <div className="undo-container">
-                  {/* <p>Undo</p> */}
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      // images.pop();
-                      images.pop();
-                      // images.slice();
-                      const updatedCanvas = images.slice();
-                      setUpdatedCanvas(updatedCanvas);
-                      console.log("images efter undo", images);
-                      console.log("canvas efter undo", updatedCanvas);
-                    }}
-                  >
-                    Undo
-                    <UndoIcon></UndoIcon>
-                  </button>
-                </div>
-                </div>
+          <div className="tool-container">
+            <p className="tool-instructions">
+              <TouchAppIcon /> Drag and drop shots onto the board
+            </p>
+            <div className="draw-container">
+              <div className="shot-container">
+                <p>Goal 1</p>
+                <img
+                  alt="Goal-1"
+                  id="goal-1"
+                  src={goal1}
+                  draggable="true"
+                  onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                />
               </div>
+              <div className="shot-container">
+                <p>Goal 2</p>
+                <img
+                  id="goal-2"
+                  alt="Goal-2"
+                  src={goal2}
+                  draggable="true"
+                  onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                />
+              </div>
+              <div className="shot-container">
+                <p>Save 3</p>
+                <img
+                  id="save-3"
+                  alt="Save-3"
+                  src={save3}
+                  draggable="true"
+                  onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                />
+              </div>
+              <div className="shot-container">
+                <p>Save 4</p>
+                <img
+                  id="save-4"
+                  alt="Save-4"
+                  src={save4}
+                  draggable="true"
+                  onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                />
+              </div>
+              <div className="shot-container">
+                <p>Save 5</p>
+                <img
+                  id="save-5"
+                  alt="Save-5"
+                  src={save5}
+                  draggable="true"
+                  onDragStart={(e) => {
+                    dragUrl.current = e.target.src;
+                    imageId.current = e.target.id;
+                  }}
+                />
+              </div>
+              <div className="undo-container">
+                {/* <p>Undo</p> */}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // images.pop();
+                    images.pop();
+                    // images.slice();
+                    const updatedCanvas = images.slice();
+                    setUpdatedCanvas(updatedCanvas);
+                    console.log("images efter undo", images);
+                    console.log("canvas efter undo", updatedCanvas);
+                  }}
+                >
+                  Undo
+                  <UndoIcon></UndoIcon>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="shot-presentation">

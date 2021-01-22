@@ -2,8 +2,10 @@ p {
   font-family: "Cabin", sans-serif;
   margin: 0;
 }
-
-.hockeyBoard {
+// #hehe {
+//     border-radius: "100px";
+// }
+.hockeyboard-container {
   background-image: url("../../assets/hockeyboard.png");
   background-repeat: no-repeat;
   margin-top: 1rem;
@@ -97,7 +99,15 @@ button {
   font-size: 24px;
   margin: 1rem 0 1rem 0;
 }
+
+.save-percentage-presentation {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+}
+
 .grade-presentation {
+    margin: 1rem 0 1rem 0;
   display: flex;
   justify-content: center;
   flex-direction: row;

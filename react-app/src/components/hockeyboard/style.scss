@@ -2,6 +2,11 @@ p {
   font-family: "Cabin", sans-serif;
   margin: 0;
 }
+
+.canvas-container {
+  margin: auto;
+  width: 571px;
+}
 // #hehe {
 //     border-radius: "100px";
 // }
@@ -15,12 +20,19 @@ p {
 
 .game-info-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 1rem;
   & .period {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: bold;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
+  }
+  & .game {
+    // font-weight: bold;
+    margin-top: 5px;
+    text-align: right;
   }
 }
 
@@ -69,8 +81,7 @@ button {
   background-color: #333333;
   color: whitesmoke;
   border-radius: 6px;
-  font-size: small;
-  text-transform: uppercase;
+  
 }
 
 .undo-container {
@@ -81,6 +92,8 @@ button {
     flex-direction: column-reverse;
     align-items: center;
     font-family: "Cabin", sans-serif;
+    font-size: small;
+  text-transform: uppercase;
     & #text {
       display: flex;
       flex-direction: column-reverse;
@@ -93,26 +106,77 @@ button {
   }
 }
 
-.shot-presentation {
+.stats-container {
   display: flex;
-  justify-content: center;
-  font-size: 24px;
-  margin: 1rem 0 1rem 0;
+    flex-direction: row;
+    // justify-content: space-around;
+    margin: 2rem 0 1rem 0;
+    width: 571px;
+}
+
+.shot-presentation {
+  // display: flex;
+  // justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  width: 50%;
+  & p {
+    margin-left: 71px;
+  }
 }
 
 .save-percentage-presentation {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    // display: flex;
+    // justify-content: center;
+    width: 50%;
+    & p {
+
+      margin-left: 71px;
+      // margin-right: 71px;
+
+    }
 }
 
 .grade-presentation {
     margin: 1rem 0 1rem 0;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   flex-direction: row;
-  font-size: 24px;
-  & p {
+  font-size: 18px;
+  font-weight: bold;
+  p {
     display: inline;
+  }
+   & .grade {
+    margin-left: 71px;
+  }
+  // & #gradetest {
+  //   // & p {
+
+  //     margin-left: none !important;
+  //   // }
+  // }
+  
+}
+
+.game-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 2rem 0;
+  & button {
+    font-family: Sura;
+font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 177px;
+    border: 1px solid #FFFFFF;
+border-radius: 6px;
+
+  }
+  & button:hover {
+    background-color: #272727;
   }
 }

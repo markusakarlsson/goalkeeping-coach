@@ -1,11 +1,11 @@
 import './App.css';
-import HockeyboardSketch from './components/hockeyboard';
 import Header from './components/header';
+import HockeyboardSketch from './components/hockeyboard';
 
 function App() {
   return (
     <>
-    {/* <Header/> */}
+    <Header/>
       <HockeyboardSketch />
       </>
   );

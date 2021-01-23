@@ -1,4 +1,32 @@
-// .header {
-//     height: 4rem;
-//     background-color: red;
+.header {
+    height: 4.1rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    // max-width: 100%;
+    // min-width: 571px;
+    width: 100%;
+}
+
+.content-container {
+    // margin: 0 50px 0 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    height: 4.1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 768px;
+    & svg {
+    
+        font-size: 2rem;
+    }
+}
+
+// .menu-icon {
 // }
+
+.logo {
+    display: inline-flex;
+    height: 3rem;
+}

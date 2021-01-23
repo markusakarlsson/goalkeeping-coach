@@ -9,6 +9,8 @@ import save4 from "../../assets/Save-4.png";
 import save5 from "../../assets/Save-5.png";
 import TouchAppIcon from "@material-ui/icons/TouchApp";
 import UndoIcon from "@material-ui/icons/Undo";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import "./style.scss";
 
 const URLImage = ({ image }) => {
@@ -47,19 +49,23 @@ const HockeyBoardSketch = () => {
   const nrOfGoals = nrOfGoal1.length + nrOfGoal2.length;
   const nrOfSaves = nrOfShots - nrOfGoals;
   const finalGrade = totalGrade / nrOfShots;
-  const savePercentage = nrOfSaves / nrOfShots;
+  const savePercentage = nrOfSaves / nrOfShots * 100;
 
   return (
     <>
+    <div className="canvas-container">
       <div className="game-info-container">
         <div className="period">
           <p>Period 1</p>
         </div>
         <div className="game">
           <p>Kållered - Ulricehamn</p>
+        {/* </div> */}
+        {/* <div className="date"> */}
+
+        <p>18 / 1 - 2021</p>
+          {/* <SportsHockeyIcon/> */}
         </div>
-        <div className="date"></div>
-        <p>18/1 2021</p>
       </div>
       <div className="hockeyboard-container">
         <div
@@ -122,7 +128,7 @@ const HockeyBoardSketch = () => {
           </p>
           <div className="draw-container">
             <div
-              title="1 = A goal that the goalie should prevent."
+              title="1 = A goal that the goalie should prevent"
               className="shot-container"
             >
               <p>Goal 1</p>
@@ -138,7 +144,7 @@ const HockeyBoardSketch = () => {
               />
             </div>
             <div
-              title="2 = A goal that is acceptable to let in."
+              title="2 = A goal that is acceptable to let in"
               className="shot-container"
             >
               <p>Goal 2</p>
@@ -154,7 +160,7 @@ const HockeyBoardSketch = () => {
               />
             </div>
             <div
-              title="3 = A save without control on balance or rebound."
+              title="3 = A save without control on balance or rebound"
               className="shot-container"
             >
               <p>Save 1</p>
@@ -170,7 +176,7 @@ const HockeyBoardSketch = () => {
               />
             </div>
             <div
-              title="4 = A good save with control on balance and rebound."
+              title="4 = A good save with control on balance and rebound"
               className="shot-container"
             >
               <p>Save 2</p>
@@ -186,7 +192,7 @@ const HockeyBoardSketch = () => {
               />
             </div>
             <div
-              title="5 = Every breakaway or other difficult plays, such as passes across the central line, deflections or screens etc."
+              title="5 = Every breakaway or other difficult plays, such as passes across the central line, deflections or screens etc"
               className="shot-container"
             >
               <p>Save 3</p>
@@ -203,7 +209,7 @@ const HockeyBoardSketch = () => {
             </div>
             <div className="undo-container">
               <button
-                title="Remove the last shot you dragged onto the board."
+                title="Remove the last shot you dragged onto the board"
                 onClick={(e) => {
                   e.preventDefault();
                   images.pop();
@@ -220,18 +226,21 @@ const HockeyBoardSketch = () => {
           </div>
         </div>
       </div>
+      <div className="stats-container">
+
       <div className="shot-presentation">
         <p title="Number of saves / Number of shots">
-          Saves/Shots = {nrOfSaves}/{nrOfShots}
+          Saves / Shots = {nrOfSaves} / {nrOfShots}
         </p>
       </div>
       <div className="save-percentage-presentation">
-        <p title="Save Percentage - The number of saves divided by the number of shots on goal.">
-          Sv % ={nrOfSaves + nrOfShots !== 0 && savePercentage.toFixed(3)}
+        <p title="Save Percentage - The number of saves divided by the number of shots on goal">
+          SVS % = {nrOfSaves + nrOfShots !== 0 && savePercentage.toFixed(2)}
         </p>
       </div>
+      </div>
       <div className="grade-presentation">
-        <p title="Grade - The amount of interventions divided by the summary of all actions. < 3.8 = Red = NOT GOOD • 3.80 - 4.09 = Green = GOOD • > 4.10 = Yellow = EXCELLENT.">
+        <p className="grade" title="Grade - The amount of interventions divided by the summary of all actions. < 3.8 = Red = NOT GOOD • 3.80 - 4.09 = Green = GOOD • > 4.10 = Yellow = EXCELLENT">
           Grade =
           {nrOfSaves + nrOfShots !== 0 &&
             " " + (totalGrade / nrOfShots).toFixed(2) + " / "}
@@ -241,6 +250,15 @@ const HockeyBoardSketch = () => {
           )}
           {finalGrade >= 4.1 && <p style={{ color: "#EBE314" }}>EXCELLENT</p>}
         </p>
+      </div>
+      <div className="game-navigation">
+        <div>
+          <button><ArrowBackIcon/> Pre-Game</button>
+        </div>
+        <div>
+          <button>Period 2 <ArrowForwardIcon/></button>
+        </div>
+      </div>
       </div>
     </>
   );

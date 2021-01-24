@@ -23,8 +23,14 @@ const Header = ({
       > */}
         <header className="header">
             <div className="content-container">
+              <div className="menu-container">
+                
             <MenuIcon className="menu-icon"></MenuIcon>
+              </div>
+              <div className="logo-container">
+
             <Logo {...logo} onClick={() => setIsMenuOpen(false)} />
+              </div>
             </div>
               {/* <div className="trigger-container">
                 <Trigger

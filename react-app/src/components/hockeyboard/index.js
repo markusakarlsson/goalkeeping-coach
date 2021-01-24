@@ -251,14 +251,14 @@ const HockeyBoardSketch = () => {
           {finalGrade >= 4.1 && <p style={{ color: "#EBE314" }}>EXCELLENT</p>}
         </p>
       </div>
+      </div>
       <div className="game-navigation">
-        <div>
+        <div className="backward-navigation">
           <button><ArrowBackIcon/> Pre-Game</button>
         </div>
-        <div>
+        <div className="forward-navigation">
           <button>Period 2 <ArrowForwardIcon/></button>
         </div>
-      </div>
       </div>
     </>
   );

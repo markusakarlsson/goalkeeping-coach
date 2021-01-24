@@ -10,8 +10,8 @@
 
 .content-container {
     // margin: 0 50px 0 50px;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
     display: flex;
     height: 4.1rem;
     justify-content: space-between;
@@ -23,8 +23,13 @@
     }
 }
 
-// .menu-icon {
-// }
+.menu-container {
+    margin-left: 2rem;
+}
+
+.logo-container {
+    margin-right: 2rem;
+}
 
 .logo {
     display: inline-flex;

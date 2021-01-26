@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import "./style.scss";
 import { useHistory } from "react-router-dom";
+import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
 
 function PreGameForm({ preGameInfo }) {
   const [date, setDate] = useState("");
   const [match, setMatch] = useState("");
-//   const [goalkeeper, setGoalkeeper] = useState("");
+  const [goalkeeper, setGoalkeeper] = useState("");
+  const seperator = " "
 //   const [homeTeam, setHomeTeam] = useState("");
 //   const [awayTeam, setAwayTeam] = useState("");
   const history = useHistory();
 
   const handleSubmit = (e) => {
-    preGameInfo([date, match]);
+    preGameInfo([date, seperator, match]);
     console.log(date, match);
     history.push("/game");
     e.preventDefault();
@@ -20,6 +22,7 @@ function PreGameForm({ preGameInfo }) {
     <div className="form-container">
       <div className="form-content">
         <h1>Pre-Game</h1>
+        <p className="instructions">Please fill in form before start of game</p>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
@@ -29,6 +32,7 @@ function PreGameForm({ preGameInfo }) {
           <br />
 
           <input
+            required="true"
             type="date"
             id="gameDate"
             name="gameDate"
@@ -38,29 +42,33 @@ function PreGameForm({ preGameInfo }) {
             onChange={(e) => setDate(e.target.value)}
           />
           <br />
-          <label htmlFor="game">Game Info</label>
+          <label htmlFor="match">Game Info</label>
           <br />
           <input
+          required="true"
             type="text"
-            id="game"
-            name="game"
-            placeholder="Game"
+            id="match"
+            name="match"
+            placeholder="Home team - Away team"
             onChange={(e) => setMatch(e.target.value)}
-            value={" " + match}
+            value={match}
           />
 
           <br />
-          {/* <input
+          <label htmlFor="goalkeeper">Goalkeeper</label>
+          <br />
+          <input
+          required="true"
             type="text"
-            id="goalie"
-            name="goalie"
-            placeholder="Goalkeeper"
+            id="goalkeeper"
+            name="goalkeeper"
+            placeholder="Name"
             onChange={(e) => setGoalkeeper(e.target.value)}
             value={goalkeeper}
           />
 
           <br />
-          <label htmlFor="match">Match </label>
+          {/* <label htmlFor="match">Match </label>
           <br />
           <input
             type="text"
@@ -80,7 +88,7 @@ function PreGameForm({ preGameInfo }) {
             value={awayTeam}
           />
           <br /> */}
-          <input type="submit" value="Face-Off!" />
+          <input id="faceOffButton" type="submit" value="Face-Off!"/>
         </form>
       </div>
     </div>

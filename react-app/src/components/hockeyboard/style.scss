@@ -26,6 +26,12 @@ p {
   }
   & .game {
     text-align: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 3rem;
+    overflow: auto;
   }
 }
 

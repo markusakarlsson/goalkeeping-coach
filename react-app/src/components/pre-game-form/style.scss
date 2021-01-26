@@ -12,6 +12,7 @@
   font-size: 18px;
   & h1 {
     align-self: flex-start;
+    margin: 0;
   }
 
   & input[type="submit"] {
@@ -27,6 +28,40 @@
     justify-content: space-around;
     width: 130px;
   }
+//   & button {
+//     margin: auto;
+//     cursor: pointer;
+//     background-color: #333333;
+//     color: whitesmoke;
+//     border-radius: 6px;
+//     border: 1px solid #ffffff;
+//     font-family: Sura;
+//     font-size: 16px;
+//     align-items: center;
+//     justify-content: space-around;
+//     width: 130px;
+//     font-family: Sura;
+//     font-size: 16px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//     width: 130px;
+//   }
+
+//   button:hover {
+//     background-color: #272727;
+// }
+
+  & .instructions {
+    margin-top: 2rem;
+    font-weight: normal;
+    font-size: x-small;
+    text-transform: uppercase;
+  }
+}
+
+form {
+    margin-top: 2rem;
 }
 
 label {
@@ -38,18 +73,26 @@ input:focus {
 }
 
 input[type="text"] {
-  padding: 12px 20px;
-  margin: 1rem 0 1rem 0;
-  box-sizing: border-box;
-  border-radius: 60px 60px 0 0;
-  font-family: "Cabin", sans-serif;
-  text-align: center;
-}
-input[type="date"] {
+    width: 15rem;
+    height: 3rem;
   padding: 12px 20px;
   margin: 1rem 0 2rem 0;
   box-sizing: border-box;
   border-radius: 60px 60px 0 0;
   font-family: "Cabin", sans-serif;
   text-align: center;
+}
+input[type="date"] {
+    width: 15rem;
+    height: 3rem;
+  padding: 12px 20px;
+  margin: 1rem 0 2rem 0;
+  box-sizing: border-box;
+  border-radius: 60px 60px 0 0;
+  font-family: "Cabin", sans-serif;
+  text-align: center;
+}
+
+#faceOffButton:hover {
+    background-color: #272727;
 }

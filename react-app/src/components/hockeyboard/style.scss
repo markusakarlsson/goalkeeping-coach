@@ -7,13 +7,10 @@ p {
   margin: auto;
   width: 571px;
 }
-// #hehe {
-//     border-radius: "100px";
-// }
 .hockeyboard-container {
   background-image: url("../../assets/hockeyboard.png");
   background-repeat: no-repeat;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: max-content;
   height: max-content;
 }
@@ -21,17 +18,13 @@ p {
 .game-info-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  // margin-top: 1rem;
   & .period {
-    font-size: 38px;
+    font-size: 36px;
     font-weight: bold;
-    // padding-bottom: 10px;
   }
   & .game {
-    // font-weight: bold;
-    margin-top: 5px;
     text-align: right;
   }
 }
@@ -81,8 +74,7 @@ button {
   background-color: #333333;
   color: whitesmoke;
   border-radius: 6px;
-  border: 1px solid #FFFFFF;
-  
+  border: 1px solid #ffffff;
 }
 
 button:hover {
@@ -92,36 +84,28 @@ button:hover {
 .undo-container {
   display: flex;
   & button {
-    // border: 1px solid #FFFFFF;
-    // border-radius: 6px;
-    // background-color: #333333;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     font-family: "Cabin", sans-serif;
     font-size: small;
-  text-transform: uppercase;
+    text-transform: uppercase;
     & #text {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
     }
   }
-
-
 }
 
 .stats-container {
   display: flex;
-    flex-direction: row;
-    // justify-content: space-around;
-    margin: 1rem 0 1rem 0;
-    width: 571px;
+  flex-direction: row;
+  margin: 1rem 0 1rem 0;
+  width: 571px;
 }
 
 .shot-presentation {
-  // display: flex;
-  // justify-content: center;
   font-size: 18px;
   font-weight: bold;
   width: 50%;
@@ -131,44 +115,40 @@ button:hover {
 }
 
 .save-percentage-presentation {
-    font-size: 18px;
-    font-weight: bold;
-    // display: flex;
-    // justify-content: center;
-    width: 50%;
-    & p {
-
-      margin-left: 71px;
-      // margin-right: 71px;
-
-    }
+  font-size: 18px;
+  font-weight: bold;
+  width: 50%;
+  & p {
+    margin-left: 71px;
+  }
 }
 
 .grade-presentation {
-    margin: 1rem 0 1rem 0;
-  // display: flex;
-  // justify-content: center;
+  margin: 1rem 0 3.5rem 0;
   flex-direction: row;
   font-size: 18px;
   font-weight: bold;
   p {
     display: inline;
   }
-   & .grade {
+  & .grade {
     margin-left: 71px;
   }
-  // & #gradetest {
-  //   // & p {
+}
 
-  //     margin-left: none !important;
-  //   // }
-  // }
-  
+.footer-buttons {
+  width: 100vw;
+  height: 3.5rem;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 .game-navigation {
-  width: 100vw;
   max-width: 768px;
+  height: 3rem;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -183,16 +163,10 @@ button:hover {
 
   & button {
     font-family: Sura;
-font-size: 16px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 120px;
-//     border: 1px solid #FFFFFF;
-// border-radius: 6px;
-
+    width: 130px;
   }
-  // & button:hover {
-  //   background-color: #272727;
-  // }
 }

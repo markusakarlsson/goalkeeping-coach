@@ -3,13 +3,11 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
-  /* margin-top: 80px; */
+  font-family: "Cabin", sans-serif;
   color: whitesmoke;
-  /* width: 768px; */
 }
 
 #root {
   width: 100vw;
   margin: 0;
 }
-

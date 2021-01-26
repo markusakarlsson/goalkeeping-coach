@@ -27,30 +27,9 @@
     align-items: center;
     justify-content: space-around;
     width: 130px;
+    -webkit-appearance: none;
   }
-//   & button {
-//     margin: auto;
-//     cursor: pointer;
-//     background-color: #333333;
-//     color: whitesmoke;
-//     border-radius: 6px;
-//     border: 1px solid #ffffff;
-//     font-family: Sura;
-//     font-size: 16px;
-//     align-items: center;
-//     justify-content: space-around;
-//     width: 130px;
-//     font-family: Sura;
-//     font-size: 16px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-around;
-//     width: 130px;
-//   }
 
-//   button:hover {
-//     background-color: #272727;
-// }
 
   & .instructions {
     margin-top: 2rem;
@@ -91,6 +70,7 @@ input[type="date"] {
   border-radius: 60px 60px 0 0;
   font-family: "Cabin", sans-serif;
   text-align: center;
+  -webkit-appearance: none;
 }
 
 #faceOffButton:hover {

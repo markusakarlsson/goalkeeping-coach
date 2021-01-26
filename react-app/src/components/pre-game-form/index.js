@@ -36,6 +36,7 @@ function PreGameForm({ preGameInfo }) {
             type="date"
             id="gameDate"
             name="gameDate"
+            placeholder="Pick a date"
             min="2021-01-01"
             max="2021-12-31"
             value={date}

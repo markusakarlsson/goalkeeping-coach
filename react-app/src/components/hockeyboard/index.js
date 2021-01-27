@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { render } from "react-dom";
 import { Stage, Layer, Image } from "react-konva";
 import useImage from "use-image";
@@ -28,10 +29,11 @@ const URLImage = ({ image }) => {
 };
 
 const HockeyBoardSketch = (props) => {
+  const history = useHistory();
   const dragUrl = React.useRef();
   const stageRef = React.useRef();
   const imageId = React.useRef();
-  const [images, setImages] = React.useState([]);
+  let [images, setImages] = React.useState([]);
   const [updatedCanvas, setUpdatedCanvas] = React.useState([]);
   const nrOfGoal1 = images.filter((images) => images.id === "goal-1");
   const nrOfGoal2 = images.filter((images) => images.id === "goal-2");
@@ -58,7 +60,7 @@ const HockeyBoardSketch = (props) => {
       <div className="canvas-container">
         <div className="game-info-container">
           <div className="period">
-            <p>1st Period</p>
+            <p id="period-text">1st Period</p>
           </div>
           <div className="game">
             <p>{props.games}</p>
@@ -236,7 +238,7 @@ const HockeyBoardSketch = (props) => {
         <div className="grade-presentation">
           <p
             className="grade"
-            title="Grade - The amount of interventions divided by the summary of all actions. < 3.8 = Red = NOT GOOD • 3.80 - 4.09 = Green = GOOD • > 4.10 = Yellow = EXCELLENT"
+            title="Grade - The amount of interventions divided by the summary of all actions. < 3.80 = Red = NOT GOOD • 3.80 - 4.09 = Green = GOOD • > 4.10 = Yellow = EXCELLENT"
           >
             Grade =
             {nrOfSaves + nrOfShots !== 0 &&
@@ -252,13 +254,30 @@ const HockeyBoardSketch = (props) => {
       <div className="footer-buttons">
         <div className="game-navigation">
           <div className="backward-navigation">
-            <button>
-              <ArrowBackIcon /> Pre-Game
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                history.push("/");
+              }}
+            >
+              <ArrowBackIcon />
+              <span id="backward-button">Pre-Game</span>
             </button>
           </div>
           <div className="forward-navigation">
-            <button>
-              Period 2 <ArrowForwardIcon />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                images.splice(0);
+                const updatedCanvas = images.slice();
+                setUpdatedCanvas(updatedCanvas);
+                document.getElementById("forward-button").innerText =
+                  "3rd Period";
+                document.getElementById("period-text").innerText = "2nd Period";
+              }}
+            >
+              <span id="forward-button">Period 2</span>
+              <ArrowForwardIcon />
             </button>
           </div>
         </div>

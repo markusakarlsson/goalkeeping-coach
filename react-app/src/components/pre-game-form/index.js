@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import "./style.scss";
 import { useHistory } from "react-router-dom";
-import SportsHockeyIcon from '@material-ui/icons/SportsHockey';
 
 function PreGameForm({ preGameInfo }) {
   const [date, setDate] = useState("");
   const [match, setMatch] = useState("");
   const [goalkeeper, setGoalkeeper] = useState("");
-  const seperator = " "
-//   const [homeTeam, setHomeTeam] = useState("");
-//   const [awayTeam, setAwayTeam] = useState("");
+  const seperator = " ";
   const history = useHistory();
 
   const handleSubmit = (e) => {
@@ -22,7 +19,9 @@ function PreGameForm({ preGameInfo }) {
     <div className="form-container">
       <div className="form-content">
         <h1>Pre-Game</h1>
-        <p className="instructions">Please fill in form before start of game</p>
+        <p className="instructions">
+          Please fill in form before the game starts
+        </p>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
@@ -46,7 +45,7 @@ function PreGameForm({ preGameInfo }) {
           <label htmlFor="match">Game Info</label>
           <br />
           <input
-          required="true"
+            required="true"
             type="text"
             id="match"
             name="match"
@@ -59,7 +58,7 @@ function PreGameForm({ preGameInfo }) {
           <label htmlFor="goalkeeper">Goalkeeper</label>
           <br />
           <input
-          required="true"
+            required="true"
             type="text"
             id="goalkeeper"
             name="goalkeeper"
@@ -69,27 +68,8 @@ function PreGameForm({ preGameInfo }) {
           />
 
           <br />
-          {/* <label htmlFor="match">Match </label>
-          <br />
-          <input
-            type="text"
-            id="match"
-            name="homeTeam"
-            placeholder="Home team"
-            onChange={(e) => setHomeTeam(e.target.value)}
-            value={homeTeam}
-          />
-          <p> - </p>
-          <input
-            type="text"
-            id="match"
-            name="awayTeam"
-            placeholder="Away team"
-            onChange={(e) => setAwayTeam(e.target.value)}
-            value={awayTeam}
-          />
-          <br /> */}
-          <input id="faceOffButton" type="submit" value="Face-Off!"/>
+
+          <input id="faceOffButton" type="submit" value="Face-Off!" />
         </form>
       </div>
     </div>

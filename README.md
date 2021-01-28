@@ -8,17 +8,17 @@ It's a school project created by Markus Karlsson at Medieinstitutet.
 ## Run projecct
 
 To run the project make sure you have installed node.js and npm.\
-Then clone down this repo and run following in your terminal:\
+Then clone down this repo and run following in your terminal:
 
-1)\
+1)
 
 ### `cd react-app`
 
-2)\
+2)
 
 ### `npm install`
 
-3)\
+3)
 
 ### `npm start`
 

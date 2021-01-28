@@ -5,7 +5,7 @@ Track shots and document how the goalkeeper performs in games.\
 It's built with React and React-Konva and should only be used on tablets or computers/laptops.\
 It's a school project created by Markus Karlsson at Medieinstitutet.
 
-## Run projecct
+## Run project
 
 To run the project make sure you have installed node.js and npm.\
 Then clone down this repo and run following in your terminal:

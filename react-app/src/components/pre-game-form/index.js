@@ -11,7 +11,6 @@ function PreGameForm({ preGameInfo }) {
 
   const handleSubmit = (e) => {
     preGameInfo([date, seperator, match]);
-    console.log(date, match);
     history.push("/game");
     e.preventDefault();
   };

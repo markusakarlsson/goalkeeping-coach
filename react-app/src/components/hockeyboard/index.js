@@ -52,8 +52,6 @@ const HockeyBoardSketch = (props) => {
   const nrOfSaves = nrOfShots - nrOfGoals;
   const finalGrade = totalGrade / nrOfShots;
   const savePercentage = (nrOfSaves / nrOfShots) * 100;
-  console.log("games", props.games);
-  console.log("pregames", props.preGames);
 
   return (
     <>
@@ -70,7 +68,6 @@ const HockeyBoardSketch = (props) => {
           <div
             onDrop={(e) => {
               e.preventDefault();
-              console.log(dragUrl.current.id);
               stageRef.current.setPointersPositions(e);
               setImages(
                 images.concat([
@@ -81,14 +78,12 @@ const HockeyBoardSketch = (props) => {
                   },
                 ])
               );
-              console.log("innan undo", images);
             }}
             onDragOver={(e) => e.preventDefault()}
           >
             <Stage width={571} height={610} ref={stageRef}>
               <Layer
                 onDblClick={(e) => {
-                  console.log("halllåååå", e.target);
                   images.splice(e.target.index, 1);
                   const updatedCanvas = images.slice();
                   setUpdatedCanvas(updatedCanvas);
@@ -108,11 +103,6 @@ const HockeyBoardSketch = (props) => {
                 }}
               >
                 {images.map((image) => {
-                  console.log("shots array:", images);
-                  console.log("saves + goals:", images.length);
-                  console.log("goals:", nrOfGoals);
-                  console.log(Number.parseInt(images.id));
-
                   return <URLImage image={image} />;
                 })}
               </Layer>
@@ -212,8 +202,6 @@ const HockeyBoardSketch = (props) => {
                     images.pop();
                     const updatedCanvas = images.slice();
                     setUpdatedCanvas(updatedCanvas);
-                    console.log("images efter undo", images);
-                    console.log("canvas efter undo", updatedCanvas);
                   }}
                 >
                   Undo

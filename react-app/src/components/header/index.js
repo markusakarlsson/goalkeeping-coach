@@ -31,7 +31,7 @@ const Header = ({
 }
 
 const Logo = ({ alt, title }) => (
-      <img src={logo} alt={alt} className="logo" title={title} />
+      <img src={logo} alt="RWK-Goaltending" className="logo" title={title} />
   );
 
   export default Header
